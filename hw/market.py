@@ -1,4 +1,4 @@
-from helpers import string_to_date
+from helpers import logger, string_to_date
 
 class Market:
     def __init__(self, wines: list = None, beers: list = None) -> None:
@@ -6,6 +6,7 @@ class Market:
         self.beers = {beer.title: beer for (beer) in beers}
         self.drinks = self.wines | self.beers
 
+    @logger
     def has_drink_with_title(self, title=None) -> bool:
         """
         Проверяет наличие напитка в магазине за О(1)
@@ -15,6 +16,7 @@ class Market:
         """
         return title in self.drinks
 
+    @logger
     def get_drinks_sorted_by_title(self) -> list:
         """
         Метод получения списка напитков (вина и пива) отсортированных по title
@@ -23,6 +25,7 @@ class Market:
         """
         return sorted(self.drinks)
 
+    @logger
     def get_drinks_by_production_date(self, from_date=None, to_date=None) -> list:
         """
         Метод получения списка напитков в указанном диапазоне дат: с from_date по to_date
