@@ -2,8 +2,8 @@ from helpers import logger, string_to_date
 
 class Market:
     def __init__(self, wines: list = None, beers: list = None) -> None:
-        self.wines = {wine.title: wine for (wine) in wines}
-        self.beers = {beer.title: beer for (beer) in beers}
+        self.wines = {wine.title: wine for (wine) in wines if (wine.title)}
+        self.beers = {beer.title: beer for (beer) in beers if (beer.title)}
         self.drinks = self.wines | self.beers
 
     @logger
