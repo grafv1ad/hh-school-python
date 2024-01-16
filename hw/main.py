@@ -3,20 +3,25 @@ from beer import Beer
 from market import Market
 
 wines = [
-    Wine("vino", "01.01.2001"),
-    Wine("vino2", "01.01.2002"),
+    Wine("Billecart-Salmon, Brut Reserve", "01.01.2024"),
+    Wine("Millstream Collection White", "01.01.2023"),
+    Wine("Bollinger, Special Cuvee Brut", "01.01.2022"),
 ]
 
 beers = [
-    Beer("pivo", "02.01.2001"),
-    Beer("pivo2", "01.01.2003"),
+    Beer("Winter Planet: Cherry & Vanilla - Sabotage", "16.01.2024"),
+    Beer("To Infinity And Beyond - Sabotage", "01.01.2024"),
+    Beer("The Raptor - Sabotage", "23.12.2023"),
+    Beer("From Heaven to Hell - Sabotage", "02.05.2007"),
+    Beer("Route 666 - Sabotage", "06.06.1666"),
+    Beer("Tommates - Sabotage", "01.01.2024"),
 ]
 
 market = Market(wines, beers)
 # market = Market([], [])
 
-print(market.has_drink_with_title("vino")) # True
-print(market.has_drink_with_title("pivo")) # True
+print(market.has_drink_with_title("Route 666 - Sabotage")) # True
+print(market.has_drink_with_title("Millstream Collection White")) # True
 print(market.has_drink_with_title("test")) # False
 
 print("-----")
@@ -27,6 +32,6 @@ for i, drink in enumerate(sorted_drinks):
 
 print("-----")
 
-drinks_by_date = market.get_drinks_by_production_date("01.01.2001", "01.01.2003")
+drinks_by_date = market.get_drinks_by_production_date("01.12.2023", "17.01.2024")
 for i, drink in enumerate(drinks_by_date):
     print(f"{i + 1}. {drink}") # Drink title
