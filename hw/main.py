@@ -23,16 +23,10 @@ print("-----")
 
 sorted_drinks = market.get_drinks_sorted_by_title()
 for i, drink in enumerate(sorted_drinks):
-    print(f"{i + 1}. {drink}") # Drink title TODO
+    print(f"{i + 1}. {drink}") # Drink title
 
 print("-----")
 
 drinks_by_date = market.get_drinks_by_production_date("01.01.2001", "01.01.2003")
 for i, drink in enumerate(drinks_by_date):
-    print(f"{i + 1}. {drink}") # Drink title TODO
-
-"""
-TODO: Доработать заготовки классов вина (Wine), пива (Beer) и магазина (Market) таким образом, чтобы через класс Market можно было:
-
-    * (*) написать свой декоратор, который бы логировал начало выполнения метода и выводил время выполнения
-"""
+    print(f"{i + 1}. {drink}") # Drink title

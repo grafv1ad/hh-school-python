@@ -1,4 +1,4 @@
-from datetime import datetime
+from helpers import string_to_date
 
 class Market:
     def __init__(self, wines: list = None, beers: list = None) -> None:
@@ -31,10 +31,10 @@ class Market:
         """
         result = []
 
-        try:
-            from_date = datetime.strptime(from_date, "%d.%m.%Y").date()
-            to_date = datetime.strptime(to_date, "%d.%m.%Y").date()
-        except:
+        from_date = string_to_date(from_date)
+        to_date = string_to_date(to_date)
+
+        if (not from_date or not to_date):
             return result
 
         for drink in self.drinks.values():
@@ -42,4 +42,3 @@ class Market:
                 result.append(drink.title)
 
         return result
-
