@@ -28,10 +28,10 @@ print("-----")
 
 sorted_drinks = market.get_drinks_sorted_by_title()
 for i, drink in enumerate(sorted_drinks):
-    print(f"{i + 1}. {drink}") # Drink title
+    print(f"{i + 1}. {drink.title} ({drink.production_date})") # Drink
 
 print("-----")
 
 drinks_by_date = market.get_drinks_by_production_date("01.12.2023", "17.01.2024")
 for i, drink in enumerate(drinks_by_date):
-    print(f"{i + 1}. {drink}") # Drink title
+    print(f"{i + 1}. {drink.title} ({drink.production_date})") # Drink

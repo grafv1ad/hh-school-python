@@ -23,7 +23,8 @@ class Market:
 
         :return: list
         """
-        return sorted(self.drinks)
+        sorted_drinks = dict(sorted(self.drinks.items()))
+        return sorted_drinks.values()
 
     @logger
     def get_drinks_by_production_date(self, from_date=None, to_date=None) -> list:
@@ -42,6 +43,6 @@ class Market:
 
         for drink in self.drinks.values():
             if drink.production_date and from_date <= drink.production_date <= to_date:
-                result.append(drink.title)
+                result.append(drink)
 
         return result
